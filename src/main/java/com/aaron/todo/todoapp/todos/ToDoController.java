@@ -47,7 +47,7 @@ public class ToDoController {
         }
 
         String username = (String)model.get("name");
-        toDoService.addTodo(username, todo.getDescription(), LocalDate.now().plusYears(1), false);
+        toDoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
         return "redirect:list-todos";
     }
 
