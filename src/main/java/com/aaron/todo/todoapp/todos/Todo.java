@@ -2,6 +2,7 @@ package com.aaron.todo.todoapp.todos;
 
 import java.time.LocalDate;
 
+//@Repository
 public class Todo {
     private int id;
     private String username;
