@@ -10,7 +10,6 @@
     </head>
     <body>
         <div class="container">
-            <h1>Welcome ${name}</h1>
             <h1>Todo List</h1>
             <table class="table">
                 <thead>
