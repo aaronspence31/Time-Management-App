@@ -5,7 +5,8 @@
         </title>
     </head>
     <body>
-        <div>Welcome to the site, ${name}!</div>
+        <div>Welcome ${name}!</div>
+        <hr>
         <div>
             <a href="list-todos">Manage Todos</a>
         </div>

@@ -12,7 +12,7 @@ public class ToDoService {
 
     static {
         todos.add(new Todo(1, "username", "Learn Lambda Expressions", LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(1, "username", "Learn Spring Security", LocalDate.now().plusYears(2), false));
+        todos.add(new Todo(2, "username", "Learn Spring Security", LocalDate.now().plusYears(2), false));
     }
 
     public List<Todo> findByUsername(String username) {
