@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+//No longer used!!!
 @Service
 public class ToDoService {
     private static List<Todo> todos = new ArrayList<>();
@@ -21,6 +22,7 @@ public class ToDoService {
         Predicate< ? super Todo> predicate = todo -> todo.getUsername().equalsIgnoreCase(username);
         return todos.stream().filter(predicate).toList(); //return list of all todos with matching username
     }
+
     public void addTodo(String username, String description, LocalDate targetDate, boolean done){
         Todo todo = new Todo(++todosCount, username, description, targetDate, done);
         todos.add(todo);
