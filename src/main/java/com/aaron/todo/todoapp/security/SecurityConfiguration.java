@@ -12,12 +12,20 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class SecurityConfiguration {
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
+        UserDetails userDetails1 = createNewUser("aaron", "password");
+        UserDetails userDetails2 = createNewUser("joe", "password");
+
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+    }
+
+    private static UserDetails createNewUser(String username, String password) {
+        //https://www.baeldung.com/spring-security-5-default-password-encoder
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
         UserDetails userDetails = User.builder()
-                .username("aaron").password(encoder.encode("password"))
+                .username(username).password(encoder.encode(password))
                 .roles("USER", "ADMIN").build();
 
-        return new InMemoryUserDetailsManager(userDetails);
+        return userDetails;
     }
 }
