@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,15 +15,18 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import java.time.LocalDate;
 import java.util.List;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class ToDoController {
+public class TodoControllerJpa {
 
     private ToDoService toDoService;
 
+    private TodoRepository todoRepository;
+
     @Autowired
-    public ToDoController(ToDoService toDoService) {
+    public TodoControllerJpa(ToDoService toDoService, TodoRepository todoRepository) {
         this.toDoService = toDoService;
+        this.todoRepository = todoRepository;
     }
 
     @RequestMapping(value = "list-todos")
