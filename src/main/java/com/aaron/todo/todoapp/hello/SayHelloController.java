@@ -13,4 +13,9 @@ public class SayHelloController {
     public String sayHello() {
         return "Hello! How are you?";
     }
+
+    @RequestMapping("say-hello-jsp")
+    public String sayHelloJsp() {
+        return "sayHello";
+    }
 }
