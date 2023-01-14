@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Welcome to the login page!</h1>
+            <h1>Login</h1>
 
             <pre>${errorMessage}</pre>
             <form method="post">
