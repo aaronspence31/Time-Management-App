@@ -1,11 +1,16 @@
 package com.aaron.todo.todoapp.todos;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
-//@Repository
+@Entity
 public class Todo {
+    @Id
+    @GeneratedValue
     private int id;
     private String username;
     @Size(min=10, message="Enter at least 10 characters")
@@ -22,6 +27,10 @@ public class Todo {
                 ", targetDate=" + targetDate +
                 ", done=" + done +
                 '}';
+    }
+
+    public Todo() {
+        this(0, "default", "default", LocalDate.now().plusYears(1), false);
     }
 
     public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
